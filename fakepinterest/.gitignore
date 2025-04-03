@@ -1,0 +1,24 @@
+# Pastas do Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual Environment (venv)
+venv/
+env/
+
+# Configurações do VSCode
+.vscode/
+
+# Arquivos de logs e temporários
+*.log
+*.sqlite3
+instance/
+
+# Dependências do Python
+*.egg-info/
+pip-log.txt
+
+# Arquivos sensíveis (exemplo de variáveis de ambiente)
+.env
