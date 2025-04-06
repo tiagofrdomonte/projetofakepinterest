@@ -4,10 +4,10 @@ from flask_login import UserMixin
 
 class Usuario(database.Model, UserMixin):
     id = database.Column(database.Integer, primary_key=True)
-    usuario = database.Column(database.String(80), nullable=False)
+    nome_usuario = database.Column(database.String(80), nullable=False)
     email = database.Column(database.String(120), unique=True, nullable=False)
     senha = database.Column(database.String(120), nullable=False)
-    fotos = database.relationship("Foto", backref="usuario", lazy=True)
+    fotos = database.relationship("Foto", backref="nome_usuario", lazy=True)
     
     @login_manager.user_loader
     def load_usuario(id_usuario):

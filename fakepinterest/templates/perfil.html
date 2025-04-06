@@ -1,0 +1,19 @@
+{% extends "homepage.html" %}
+
+{% block body %}
+
+<h1>Perfil - {{ usuario.nome_usuario }}</h1>
+<a href="{{ url_for('logout') }}">Sair</a>
+
+{% if form %}
+<form method="POST" enctype="multipart/form-data">
+    {{ form.csrf_token }}
+
+    {{ form.foto }}
+    {{ form.botao_confirmacao }}
+</form>
+{% endif %}
+
+
+
+{% endblock %}
