@@ -2,8 +2,10 @@
 
 {% block body %}
 
+{% include "navbar.html" %}
+
 <h1>Perfil - {{ usuario.nome_usuario }}</h1>
-<a href="{{ url_for('logout') }}">Sair</a>
+
 
 {% if form %}
 <form method="POST" enctype="multipart/form-data">
@@ -12,6 +14,14 @@
     {{ form.foto }}
     {{ form.botao_confirmacao }}
 </form>
+{% endif %}
+
+{% for foto in usuario.fotos %}
+    <img src="{{ url_for('static', filename='fotos_posts/{}'.format(foto.imagem)) }}" alt="Foto do usuário">
+{% endfor %}
+
+{% if usuario.fotos|length == 0 %}
+    <p>Sem fotos</p>
 {% endif %}
 
 
